@@ -1,4 +1,4 @@
-let amigos = []; // Array para almacenar los nombres
+let amigos = []; 
 
 function agregarAmigo() {
     let input = document.getElementById("amigo");
@@ -8,21 +8,21 @@ function agregarAmigo() {
     let regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
     if (nombre === "") {
-        alert("Por favor, ingresa un nombre.");
+        alert("Por favor, ingresa un nombre");
         return;
     }
 
     if (!regexNombre.test(nombre)) {
-        alert("El nombre solo puede contener letras y espacios.");
+        alert("El nombre solo puede contener letras y espacios");
         return;
     }
 
     if (amigos.includes(nombre.toLowerCase())) {
-        alert("Este nombre ya está en la lista.");
+        alert("Este nombre ya está en la lista");
         return;
     }
 
-    // Agregar nombre a la lista y al array
+    // Agrega nombre a la lista y al array
     amigos.push(nombre.toLowerCase());
     let nuevoElemento = document.createElement("li");
     nuevoElemento.textContent = nombre;
@@ -40,13 +40,13 @@ function sortearAmigo() {
     let indiceAleatorio = Math.floor(Math.random() * amigos.length);
     let nombreSorteado = amigos[indiceAleatorio];
 
-    // Mostrar el nombre sorteado
-    document.getElementById("resultado").textContent = " Amigo sorteado es: " + nombreSorteado.charAt(0).toUpperCase() + nombreSorteado.slice(1);
+    // Muestra el nombre sorteado
+    document.getElementById("resultado").textContent = " El Amigo Secreto Sorteado es: " + nombreSorteado.charAt(0).toUpperCase() + nombreSorteado.slice(1);
 
-    // Limpiar la lista en pantalla
+    // Limpia la lista en pantalla
     document.getElementById("listaAmigos").innerHTML = "";
 
-    // Vaciar el array de amigos
+    // Vacia el array de amigos
     amigos = [];
 
     
